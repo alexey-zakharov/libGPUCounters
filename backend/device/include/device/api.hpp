@@ -24,6 +24,12 @@
 
 #pragma once
 
+#if defined(HWCPIPE_DEVICE_STATIC)
+
+#define HWCPIPE_DEVICE_API
+
+#else
+
 /** Import hwcpipe::device symbol. */
 #define HWCPIPE_DEVICE_IMPORT __attribute__((visibility("default")))
 /** Export hwcpipe::device symbol. */
@@ -34,4 +40,6 @@
 #define HWCPIPE_DEVICE_API HWCPIPE_DEVICE_EXPORT
 #else
 #define HWCPIPE_DEVICE_API HWCPIPE_DEVICE_IMPORT
+#endif
+
 #endif

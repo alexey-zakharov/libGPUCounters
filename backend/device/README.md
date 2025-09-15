@@ -11,6 +11,9 @@ The library provides access to:
 - Kernel side hardware counters samplers (manual and periodic)
 - Device dependent constants, e.g. number of shader cores, cache slices, cache size, etc.
 
+Dy default the library is built as dynamic library named `device`.
+Use `HWCPIPE_DEVICE_STATIC` define to build library in static mode.
+
 ## Usage
 
 Minimal example:
