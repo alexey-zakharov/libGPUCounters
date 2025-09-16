@@ -8,7 +8,9 @@
 
 #include <cstdint>
 
-#if __cplusplus >= 201703L
+#if __cplusplus >= 201703L || (__clang__ && __cplusplus >= 201402L)
+#define HWCP_NODISCARD [[nodiscard]]
+#elif defined(_MSC_VER)
 #define HWCP_NODISCARD [[nodiscard]]
 #else
 #define HWCP_NODISCARD __attribute__((warn_unused_result))
